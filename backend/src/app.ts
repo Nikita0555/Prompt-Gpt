@@ -35,6 +35,9 @@ app.use(cookieParser(process.env.COOKIE_SECRET));
 //remove it in production
 app.use(morgan("dev"));
 
+app.get("/",(req,res)=>{
+  res.status(200).json({message:"MERN-Gpt Backend api is running successfully!"});
+});
 app.use("/api/v1", appRouter);
 
 export default app;
